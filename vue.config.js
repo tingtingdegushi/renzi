@@ -36,7 +36,15 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    
+    // 配置请求代理转发
+    proxy: {
+      // 以key:value 的形式标记了需要转发的条件和转发的目的地
+      '/api': {
+        // 转发的目的地
+        target: 'http://ihrm-java.itheima.net',
+        changeOrigin: true
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
